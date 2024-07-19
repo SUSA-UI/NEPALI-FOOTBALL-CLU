@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPAL FOOTBALL CLUB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004d40;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            animation: slideInDown 1s ease-out;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #ffab00;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+            color: #004d40;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #003d33;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .photo-container {
+            perspective: 1000px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+            transform: rotateY(0);
+            transition: transform 1s;
+        }
+
+        .photo-container:hover img {
+            transform: rotateY(360deg);
+        }
+
+        .welcome {
+            background: linear-gradient(45deg, #ff4081, #ffeb3b);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        .welcome p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            animation: fadeInText 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 105, 180, 1);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .upcoming-match {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .upcoming-match h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .upcoming-match h3 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .upcoming-match p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Heading Colors */
+        #news h2 {
+            color: #00796b;
+        }
+
+        #community h2 {
+            color: #d32f2f;
+        }
+
+        #training h2 {
+            color: #1976d2;
+        }
+
+        #history h2 {
+            color: #fbc02d;
+        }
+
+        #contact h2 {
+            color: #8e24aa;
+        }
+
+        #match h2 {
+            color: #ef6c00;
+        }
+
+        #location h2 {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEPAL FOOTBALL CLUB</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#training">Training & Tips</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#match">Upcoming Match</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="intro" class="welcome">
+            <h2>Welcome to Nepal Football Club!</h2>
+            <p>Your ultimate destination for all things football. Stay updated with the latest news, connect with other fans, and improve your game with our expert tips.</p>
+            <div class="photo-container">
+                <img src="https://english.nepalpress.com/wp-content/uploads/2021/03/nepal-vs-bangladesh-001.jpg.pagespeed.ce_._BK3MOHcG8.jpg" alt="Football fans cheering">
+            </div>
+        </section>
+        <section id="news">
+            <h2>Latest News</h2>
+            <ul>
+                <li><a href="news1.html">BEST KEEPER AWARD GO TO KIRAN</a></li>
+                <li><a href="news2.html">Match Report: Team A vs. Team B</a></li>
+                <li><a href="news3.html">Injury Updates: Key Players to Miss Out</a></li>
+            </ul>
+        </section>
+        <section id="community">
+            <h2>Community</h2>
+            <p>Connect with other football fans, share your thoughts, and engage in discussions.</p>
+        </section>
+        <section id="training">
+            <h2>Training & Tips</h2>
+            <article>
+                <h3>Nepali Football Training Highlights</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hWdTb7BdU4I" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Highlights from Nepali football training sessions...</p>
+            </article>
+            <article>
+                <h3>Dribbling Techniques</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ACUrqfcQt8w" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Master the art of dribbling with these essential techniques...</p>
+            </article>
+            <article>
+                <h3>Strength Training Exercises</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/1Nun1O0jHZ0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Build your strength with these targeted exercises...</p>
+            </article>
+        </section>
+        <section id="history">
+            <h2>History of Football</h2>
+            <p>Explore the rich history of football, from its early origins to the modern game we know today.</p>
+            <ul>
+                <li><a href="early-history.html">Early History</a></li>
+                <li><a href="evolution.html">Evolution of the Game</a></li>
+                <li><a href="modern-era.html">Modern Era</a></li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, comments, or suggestions, please feel free to reach out to us.</p>
+            <form action="submit_contact_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p><strong>Email:</strong> susantjoshi999@gmail.com</p>
+            <p><strong>Phone:</strong> 01-521615</p>
+            <p><strong>Address:</strong> Kathmandu, Nepal</p>
+        </section>
+        <section id="match" class="upcoming-match">
+            <h2>Upcoming Match</h2>
+            <h3>Nepal Football Club vs Bangladesh 11 FC</h3>
+            <p><strong>Date:</strong> August 15, 2024</p>
+            <p><strong>Time:</strong> 7:00 PM (Local Time)</p>
+            <p><strong>Venue:</strong> Dasarath Stadium, Kathmandu</p>
+        </section>
+        <section id="location">
+            <h2>Our Location</h2>
+            <div style="width: 100%; height: 400px;">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    style="border:0"
+                    src="https://www.bing.com/maps/embed?osid=a5916f46-08cb-4ad4-82ce-56523fd85cef"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NEPAL FOOTBALL CLUB. All rights reserved.</p>
+    </footer>
+</body>
+</html>
